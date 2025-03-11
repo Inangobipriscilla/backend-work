@@ -74,7 +74,7 @@ App.post('/api/login', async (req, res) => {
   }
 });
 
-// Student Routes
+// Student Route
 App.get('/api/student/dashboard', authenticate, (req, res) => {
   if (req.user.role !== 'student') return res.status(403).json({ message: 'Forbidden' });
   res.json({
@@ -84,7 +84,7 @@ App.get('/api/student/dashboard', authenticate, (req, res) => {
   });
 });
 
-// Admin Routes
+// Admin Route
 App.get('/api/admin/dashboard', authenticate, (req, res) => {
   if (req.user.role !== 'admin') return res.status(403).json({ message: 'Forbidden' });
   res.json({
